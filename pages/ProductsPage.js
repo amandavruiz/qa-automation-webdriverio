@@ -47,21 +47,20 @@ export class ProductsPage {
         const selectedProduct = products[index];
         await selectedProduct.moveTo();
         const addToCartButton = await selectedProduct.$(ProductsLocators.addToCartBtn);
+        await addToCartButton.waitForDisplayed({ timeout: 5000 });
         await addToCartButton.click();
         await saveScreenshot('Produto adicionado ao carrinho');
     }
 
     async clickContinueShopping() {
 
-        await this.continueShoppingBtn.waitForDisplayed({ timeout: 2000 });
-        await this.continueShoppingBtn.waitForClickable();
+        await this.continueShoppingBtn.waitForDisplayed({ timeout: 5000 });
         await this.continueShoppingBtn.click();
         await saveScreenshot('Continuando compras');
     }
 
     async clickViewCart() {
         await this.viewCartBtn.waitForDisplayed({ timeout: 5000 });
-        await this.viewCartBtn.waitForClickable();
         await this.viewCartBtn.click();
         await saveScreenshot('Abrindo carrinho');
     }

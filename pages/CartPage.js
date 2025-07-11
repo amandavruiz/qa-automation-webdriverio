@@ -72,14 +72,14 @@ export class CartPage {
     }
 
     async isProductRemoved() {
-        await browser.pause(2000);
+        await browser.pause(5000);
         const products = await $$(CartLocators.cartProductList);
         return products.length === 0;
     }
 
     async validateEmptyCartText() {
         const emptyCartElement = await $(CartLocators.emptyCartText);
-        await emptyCartElement.waitForDisplayed({ timeout: 2000 });
+        await emptyCartElement.waitForDisplayed({ timeout: 5000 });
         const text = await emptyCartElement.getText();
         await saveScreenshot('Carrinho vazio');
         return text === 'Cart is empty!';
