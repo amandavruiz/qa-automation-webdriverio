@@ -47,6 +47,29 @@ Este projeto automatiza testes da aplicação web https://automationexercise.com
 
 ---
 
+## Visualizar o relatório após a execução da pipeline
+
+Após a pipeline finalizar, você pode baixar e visualizar o relatório localmente seguindo os passos abaixo:
+
+1. Faça o download do artefato gerado na execução da pipeline.
+
+2. Descompacte o arquivo em uma pasta de sua preferência.
+
+3. Abra o terminal e navegue até a pasta onde o relatório foi extraído.  
+   Exemplo:
+   cd /caminho/para/a/pasta/allure-report
+
+4. Caso ainda não tenha, instale o servidor estático serve:
+   npm install -g serve
+
+5. Execute o servidor local na porta 8080:
+   serve -l 8080
+
+6. Abra o navegador e acesse:
+   http://localhost:8080
+   
+---
+
 ## Estrutura do projeto
 
 /pages         -> Classes que representam as páginas do sistema (Page Objects)
